@@ -35,8 +35,8 @@ public class DatabaseLoader implements CommandLineRunner {
 	
 	@Override
 	public void run(String... strings) throws Exception {
-		final Person ericka = this.repository.save(new Person("Ericka", "Corrales", "06637042R","644431446", "Plaza alcalde"));
-		final Person carlos = this.repository.save(new Person("Carlos", "Camacho", "50222126Q","678269402", "Plaza Alcalde"));
+		final Person boba = this.repository.save(new Person("Boba", "Fet", "08888888R","644431446", "Plaza alcalde"));
+		final Person luke = this.repository.save(new Person("Luke", "Skywalker", "99999999Q","678269402", "Plaza Alcalde"));
 		
 		final PropertyType  stand = this.propertyTypeRepository.save(new PropertyType("stand"));
 		final PropertyType  storage =  this.propertyTypeRepository.save(new PropertyType("storage"));
@@ -53,8 +53,8 @@ public class DatabaseLoader implements CommandLineRunner {
          java.util.Date dateStart = Date.valueOf(strDate);
          java.util.Date dateFin = Date.valueOf(finDate);
 
-		this.agreementRepository.save(new Agreement(ericka, stand4, new Date(dateStart.getTime()), new Date(dateFin.getTime()), new BigDecimal(500.00), "Contrato Ericka"));
-		this.agreementRepository.save(new Agreement(carlos, storage5M,new Date(dateStart.getTime()), new Date(dateFin.getTime()), new BigDecimal(400.00), "Contrato Carlos"));
+		this.agreementRepository.save(new Agreement(boba, stand4, new Date(dateStart.getTime()), new Date(dateFin.getTime()), new BigDecimal(500.00), "Contrato Boba"));
+		this.agreementRepository.save(new Agreement(luke, storage5M,new Date(dateStart.getTime()), new Date(dateFin.getTime()), new BigDecimal(400.00), "Contrato Luke"));
 
 	}
 }
