@@ -22,14 +22,15 @@ public class Property {
 	private Long id;
 
 	private String address;
-	private BigDecimal price;
 	
 	@ManyToOne
 	@JoinColumn(name="PROPERTYTYPE_ID")
 	private PropertyType propertyType;
 
+    private BigDecimal price;
+
 	private String description;
-	
+
 	public Property(){
 	}
 
