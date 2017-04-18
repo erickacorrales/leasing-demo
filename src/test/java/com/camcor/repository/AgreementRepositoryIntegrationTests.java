@@ -16,19 +16,19 @@ import java.util.List;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class AgreementRepositoryIntegrationTests extends  AbstractTest {
-	
+
 	@Autowired
 	AgreementRepository repository;
-	
+
 	@Test
 	public void findsFirstPageOfAgreements() {
 		Page<Agreement> agreements = this.repository.findAll(PageRequest.of(0, 10));
 		assertThat(agreements.getTotalElements()).isEqualTo(2L);
 	}
-	
+
 	@Test
 	public void findAllAgreementByTenant(){
-		List<Agreement> agreements = this.repository.findAllAgreementByTenant("Ericka");
+		List<Agreement> agreements = this.repository.findAllAgreementByTenant("Boba");
 		assertThat(agreements.size()).isEqualTo(1);
 	}
 	
